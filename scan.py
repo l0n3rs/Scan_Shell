@@ -28,7 +28,7 @@ def scan():
 		w=open('{0}'.format(r),"r").read().split('\n')
 		for pdd in o:
 			for pdw in w:
-				urls=pdw+pdd
+				urls=pdw.strip()+pdd.strip()
 				try:
 					k=requests.get(url=urls,headers=headers)
 					if k.status_code==200 or k.status_code == 500:
